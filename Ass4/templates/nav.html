@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'myWeb.css')}}">
+    <script defer src="{{url_for('static', filename = 'JSmyweb.css')}}"></script>
+
+</head>
+<body>
+<nav class="topNav">
+    <ul>
+        <li><a href="/HomePage">Home</a></li>
+        <li><a href="/ContactPage">Contact Us</a></li>
+         <li><a href="/assignment3_1">assignment3_1</a></li>
+        <li><a href="/assignment3_2">assignment3_2</a></li>
+
+    </ul>
+</nav>
+</body>
+</html>

@@ -1,0 +1,320 @@
+.topNav{
+  background-color: rgb(60, 109, 76);
+  overflow: auto;    
+}
+ul li a.active {
+  background-color: rgb(181, 212, 172);
+}
+
+li {
+  display: inline;
+}
+.topNav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+.topNav a {
+  float: left;
+  color: #060404;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+header {
+  padding:2%; /* some padding */
+  background: #ededd6; /* green background */
+  opacity: 0.6;
+  grid-area: header;
+ 
+  color: rgb(92, 161, 89);
+  font-weight: bold;
+}
+
+body {
+  background-image: url("../static/backgroung3.jpg");
+  background-color: #cccccc;
+  background-position: left top;
+  background-repeat: no-repeat;
+  font-family: Monospace;
+  background-size: cover;
+  text-align: center; 
+ }
+ #imgContact{
+   
+          background-color: lightgrey;
+          width: 200px;
+          border: 5px solid rgb(106, 170, 139);
+          padding: 10px;
+          margin: 10px;
+ }
+
+.earth{
+  height: 80px;
+  border-radius: 60%;
+  border: 5px solid #151b5e;
+  animation: 5s ease-out 1s 1 running round ;
+  float: left;
+}
+span{
+  border: 1px solid rgba(0, 0, 0, 0.301)
+}
+
+#Info{
+  visibility: hidden;
+  border: 5px solid rgb(122, 55, 55);
+  margin: auto;
+  width: 200px;
+ border-radius: 40%;
+  padding: 10px;
+
+}
+.view {
+  width: 250px;
+  height: 250px;
+  /* center content using flex box */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* overlay */
+  box-shadow: 0 0 0 200px inset, 0 0 5px grey;
+  /* hover out transition */
+  transition: box-shadow 1s;
+  float: left;
+  margin: 10px;
+}
+
+
+/* pokemone names */
+
+.view::after {
+  width: 80%;
+  height: 80%;
+  display: block;
+  white-space: pre;
+  font: 15pt 'sigmar one';
+  color: white;
+  border: 2px solid;
+  text-align: center;
+  /* center content using flex box */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* hover out transition */
+  transition: opacity 1s .5s;
+}
+
+
+/* reveal pokemone picture on hover */
+
+.view:hover {
+  box-shadow: 0 0 0 5px inset, 0 0 5px grey, 0 0 10px grey inset;
+  transition: box-shadow 1s;
+}
+
+
+/* hide pokemone name on hover */
+
+.view:hover::after {
+  opacity: 0;
+  transition: opacity .5s;
+}
+
+#Jordan {
+  background-image: url("../static/jordan.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size:contain;
+  color: rgba(181, 152, 103, 0.9);
+  border-color: rgba(181, 152, 103, 0.477);
+  grid-area: first;
+}
+
+#Jordan::after {
+  content: 'Joradn';
+}
+
+#Alps {
+  background-image: url("../static/france.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size:contain;
+  color: rgba(165, 196, 202, 0.9);
+  grid-area: second;
+}
+
+#Alps::after {
+  content: 'Apls'
+}
+
+#NewZealand {
+  background-image: url("../static/NZ1.jpg");
+  color: rgba(125, 157, 137, 0.9);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size:contain;
+  grid-area: third;
+}
+
+#NewZealand::after {
+  content: 'New Zealand'
+}
+#Israel {
+  background-image: url("../static/ISRAEL.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size:contain;
+  grid-area: four;
+  color: rgba(194, 146, 184, 0.9);
+ 
+ 
+}
+
+#Israel::after {
+  content: 'Israel'
+}
+
+#wrapper{
+
+  display: grid;
+  grid-template-areas: 'first second third four';
+  
+  
+}
+@media only screen and  (max-width:800px) {
+  body{background-image: url("../static/background1.jpg"); 
+    background-position: left top;
+    background-repeat: no-repeat; 
+    background-size: 100%;
+  }
+
+  #wrapper{
+      display: grid;
+      grid-template-areas: 'first second' 
+      'third four'
+      ;
+  }     
+}
+
+
+
+#loading {
+height: 120px;
+width: 300px;
+display: flex;
+justify-content: center;
+align-items: center;
+background: rgb(75, 75, 75);
+display:none;
+margin: auto;
+}
+
+.wave {
+width: 5px;
+height: 100px;
+background: linear-gradient(45deg, rgb(105, 147, 93), #fff);
+margin: 10px;
+animation: wave 1s linear infinite;
+border-radius: 20px;
+display: inline-block;
+}
+
+.wave:nth-child(2) {
+animation-delay: 0.1s;
+}
+.wave:nth-child(3) {
+animation-delay: 0.2s;
+}
+.wave:nth-child(4) {
+animation-delay: 0.3s;
+}
+.wave:nth-child(5) {
+animation-delay: 0.4s;
+}
+.wave:nth-child(6) {
+animation-delay: 0.5s;
+}
+.wave:nth-child(7) {
+animation-delay: 0.6s;
+}
+.wave:nth-child(8) {
+animation-delay: 0.7s;
+}
+.wave:nth-child(9) {
+animation-delay: 0.8s;
+}
+.wave:nth-child(10) {
+animation-delay: 0.9s;
+}
+
+@keyframes wave {
+0% {
+  transform: scale(0);
+}
+50% {
+  transform: scale(1);
+}
+100% {
+  transform: scale(0);
+}
+}
+
+.FormCont{
+text-align:center;
+}
+
+
+#snackbar {
+visibility: hidden; /* Hidden by default. Visible on click */
+min-width: 250px; /* Set a default minimum width */
+margin-left: -125px; /* Divide value of min-width by 2 */
+background-color: #333; /* Black background color */
+color: #fff; /* White text color */
+text-align: center; /* Centered text */
+border-radius: 2px; /* Rounded borders */
+padding: 16px; /* Padding */
+position: fixed; /* Sit on top of the screen */
+z-index: 1; /* Add a z-index if needed */
+left: 50%; /* Center the snackbar */
+bottom: 30px; /* 30px from the bottom */
+}
+
+
+#snackbar.show {
+visibility: visible; /* Show the snackbar */
+/* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+However, delay the fade out process for 2.5 seconds */
+animation: fadein 0.5s, fadeout 0.5s 4.5s ;
+}
+
+
+@keyframes fadein {
+from {bottom: 0; opacity: 0;}
+to {bottom: 30px; opacity: 1;}
+}
+
+
+@keyframes fadeout {
+from {bottom: 30px; opacity: 1;}
+to {bottom: 0; opacity: 0;}
+}
+
+@keyframes round {
+100%{
+  transform: rotate(360deg);
+  }
+}
+
+
+
+.container {
+
+    border: rgb(60, 109, 76) 3px solid;
+    border-radius: 5px;
+    margin: 10px auto;
+    border-radius: 20%;
+    width: 30%;
+    padding: 10px;
+    align-content: center;
+
+}

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}Fetch - FrontEnd{% endblock %}
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('assignment_4.static', filename='css/assignment_4.css') }}"/>
+
+{% endblock %}
+{% block tohen %}
+
+    <h1>Fetch - FrontEnd</h1>
+    <h3>User List:
+        <button onclick="myFunction()">Click me</button>
+    </h3>
+    <input type="number" name="user_id" id="user_id_ins">
+    <main>
+
+    </main>
+
+
+    <h1>Requests - BackEnd</h1>
+
+    <form action="/fetch_be" method="get">
+        Id: <input type="text" name="num_id" >
+        <input type="hidden" name="type" value="backend">
+
+        <input type="submit" value="Get Random Pockemons">
+    </form>
+
+    {% if session.start %}
+        {% if session.pockemons %}
+            {% for user in session.pockemons %}
+                <img src="{{ user.data.avatar }}" alt="pic">
+
+                <h4>email: {{ user.email }}</h4>
+                <h4>Name: {{ user.first_name }}</h4>
+
+            {% endfor %}
+        {% endif %}
+    {% endif %}
+
+
+    <script defer src="{{ url_for('assignment_4.static', filename = 'js/assignment_4.js') }}"></script>
+
+
+
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% set title='Assignment_4' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('assignment_4.static', filename='css/assignment_4.css') }}"/>
+{% endblock %}
+{% block title %}Users{% endblock %}
+
+{% block tohen %}
+    <h1>User Page</h1>
+    <p>You can add new user, watch users list</p>
+
+    {% if session['msg'] %}
+        <h2> {{ session['msg'] }} </h2>
+    {% endif %}
+
+    <div class="containerForm">
+        <h2>Insert Form</h2>
+        <form action="/insert_user" method="post">
+            <input type="text" name="user_name" placeholder="Insert Name">
+            <input type="email" name="email" placeholder="Email">
+            <input type="text" name="first_name" placeholder="first name">
+            <input type="text" name="last_name" placeholder="last name">
+            <input type="number" name="user_age" placeholder="age">
+            <input type="submit">
+
+        </form>
+    </div>
+
+    <div class="containerForm">
+        <h2>Update Form</h2>
+        <form action="/update_user" method="post">
+            <input type="text" name="user_name" placeholder="Insert Name">
+            <input type="email" name="email" placeholder="Email">
+            <input type="text" name="first_name" placeholder="first name">
+            <input type="text" name="last_name" placeholder="last name">
+            <input type="number" name="user_age" placeholder="age">
+            <input type="submit" value="Update" class="button">
+
+        </form>
+    </div>
+
+
+
+
+
+    {% for user in users %}
+        <div class="container">
+            {#            {{ user }}#}
+            <h3>{{ user.user_name }}</h3>
+            <h4>Email: {{ user.email }}</h4>
+            <form action="/delete_user" method="post">
+                <input type="hidden" name="user_name" value="{{ user.user_name }}">
+                <input type="submit" value="Delete" id="delete">
+            </form>
+
+
+        </div>
+    {% endfor %}
+
+{% endblock %}
+
+{% block page_body_footer %}{% endblock %}
+
+{% block page_body_js %}
+    <script src="{{ url_for('about.static', filename='js/about.js') }}"></script>
+{% endblock %}

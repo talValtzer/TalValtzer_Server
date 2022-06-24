@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% set title='Assignment3-1' %}
+
+
+{% block title %}About Page{% endblock %}
+
+{% block tohen %}
+    {{ super() }}
+
+    <h1>About Meeeeee</h1>
+    {% if user_info %}
+        <div class="container">
+            <h2>User Info</h2>
+            <br>
+            {% for title, value in user_info.items() %}
+                <h3>{{ title }}: {{ value }}</h3>
+            {% endfor %}
+        </div>
+
+        <div class="container">
+            <h2>User Hobbies</h2>
+            <ul>
+                {% for hobbie in hobbies|sort %}
+                    <div>
+                        <li>{{ hobbie | title() }}</li>
+                    </div>
+                {% endfor %}
+            </ul>
+        </div>
+
+
+    {% else %}
+        <h3>No info. Please log in.</h3>
+    {% endif %}
+{% endblock %}
